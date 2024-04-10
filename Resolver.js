@@ -56,20 +56,21 @@ let globalCoordinates = {
     // Function to retrieve coordinates and resolve them to an address
     function retrieveCoordinatesAndResolve(responseText) {
         try {
-        let interceptedResult = responseText;
-        const pattern = /-?\d+\.\d+,-?\d+\.\d+/g;
-        let match = interceptedResult.match(pattern)[0];
-        let split = match.split(",");
+            let interceptedResult = responseText;
+            const pattern = /-?\d+\.\d+,-?\d+\.\d+/g;
+            let match = interceptedResult.match(pattern)[0];
+            let split = match.split(",");
+            
+            let lat = Number.parseFloat(split[0]);
+            let lng = Number.parseFloat(split[1]);
 
-        let lat = Number.parseFloat(split[0]);
-        let lng = Number.parseFloat(split[1]);
-
-        globalCoordinates.lat = lat;
-        globalCoordinates.lng = lng;
-        resolveFullAddress(globalCoordinates.lat, globalCoordinates.lng);
-    } catch (error) {
-        console.error('Error retrieving and resolving coordinates:', error);
-    }
+            globalCoordinates.lat = lat;
+            globalCoordinates.lng = lng;
+            
+            resolveFullAddress(globalCoordinates.lat, globalCoordinates.lng);
+        } catch (error) {
+            console.error('Error retrieving and resolving coordinates:', error);
+        }
     }
 
     // Intercept XMLHttpRequests
