@@ -4,7 +4,12 @@
 // @version      1.0
 // @description  Resolve OpenGuessr Game
 // @author       Cyberdoc della Peste (social:@ildocdellapeste / email: ildocdellapeste@gmail.com)
-// @match        https://*/*
+// @updateURL    https://github.com/Cyberdocdellapeste/OpenGuessr_Resolver/raw/main/Resolver.js
+// @downloadURL  https://github.com/Cyberdocdellapeste/OpenGuessr_Resolver/raw/main/Resolver.js
+// @match        https://openguessr.netlify.app/*
+// @match        https://*.googleapis.com/*
+// @match        https://*.google.com/*
+// @match        https://*.openstreetmap.org/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=openguessr.netlify.app
 // @grant        GM.xmlHttpRequest
 // ==/UserScript==
